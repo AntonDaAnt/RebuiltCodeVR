@@ -19,14 +19,14 @@ class RobotContainer():
         self.swerveController = wpilib.interfaces.GenericHID(self.constants.swerveController)
         self.shooterController = wpilib.interfaces.GenericHID(self.constants.shooterController)
 
-        # Create Shooter Object
-        self.shooter = shooter.Shooter(self.constants, self.network)
-        self.shooter.setDefaultCommand(
-            commands2.RunCommand(
-                lambda: self.shooter.periodic(),
-                self.shooter
-            )
-        )
+        ## Create Shooter Object
+        #self.shooter = shooter.Shooter(self.constants, self.network)
+        #self.shooter.setDefaultCommand(
+        #    commands2.RunCommand(
+        #        lambda: self.shooter.periodic(),
+        #        self.shooter
+        #    )
+        #)
 
         # Create swerve object
         self.swerve = drivetrain.Drivetrain()
