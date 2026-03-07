@@ -40,23 +40,23 @@ class RobotContainer():
         #     )
         # )
 
-        self.choralscorer = coralmanipulator.CoralScorer(32, 33)
-        self.choralscorer.setDefaultCommand(
-            commands2.RunCommand(
-                lambda: self.choralscorer.handle(
-                    self.Juanita.getRawButton(self.constants.JuanitaButtons.Choral)
-                ),
-                self.choralscorer
-            )
-        )
+        # self.choralscorer = coralmanipulator.CoralScorer(32, 33)
+        # self.choralscorer.setDefaultCommand(
+        #     commands2.RunCommand(
+        #         lambda: self.choralscorer.handle(
+        #             self.Juanita.getRawButton(self.constants.JuanitaButtons.Choral)
+        #         ),
+        #         self.choralscorer
+        #     )
+        # )
 
-        self.elevator = elevator.Elevator()
-        self.elevator.setDefaultCommand(
-            commands2.RunCommand(
-                lambda: self.elevator.periodic(),
-                self.elevator
-            )
-        )
+        # self.elevator = elevator.Elevator()
+        # self.elevator.setDefaultCommand(
+        #     commands2.RunCommand(
+        #         lambda: self.elevator.periodic(),
+        #         self.elevator
+        #     )
+        # )
 
         # Example Register Named Commands
         # NamedCommands.registerCommand('autoBalance', self.swerve.autoBalanceCommand())
@@ -66,19 +66,19 @@ class RobotContainer():
         # NamedCommands.registerCommand('ElevatorL4', self.elevator.goToL4())
         # NamedCommands.registerCommand('ElevatorRest', self.elevator.goToRest())
         # NamedCommands.registerCommand('someOtherCommand', SomeOtherCommand())
-        NamedCommands.registerCommand('SpitCoral', self.choralscorer.getSpitCoralCommand())  # self.choralscorer.getSpitCoralCommand()
+        # NamedCommands.registerCommand('SpitCoral', self.choralscorer.getSpitCoralCommand())  # self.choralscorer.getSpitCoralCommand()
 
         # Another option that allows you to specify the default auto by its name
-        self.autoChooser = AutoBuilder.buildAutoChooser("Main Auto")
+        # self.autoChooser = AutoBuilder.buildAutoChooser("Main Auto")
 
-        wpilib.SmartDashboard.putData("Auto Chooser", self.autoChooser)
+        # wpilib.SmartDashboard.putData("Auto Chooser", self.autoChooser)
     
-    def runAuto(self):
-        self.getAutonomousCommand().schedule()
+    # def runAuto(self):
+    #     self.getAutonomousCommand().schedule()
 
     def disable(self):
         # self.elevator.disable()
         self.swerve.disable()
 
-    def getAutonomousCommand(self) -> commands2.Command:
-        return self.autoChooser.getSelected()
+    # def getAutonomousCommand(self) -> commands2.Command:
+    #     return self.autoChooser.getSelected()
