@@ -10,6 +10,9 @@ import commands2
 import RobotContainer
 
 class MyRobot(commands2.TimedCommandRobot):
+    def __init__(self):
+        super().__init__()
+
     def robotInit(self) -> None:
         """Robot initialization function"""
         self.robotContainer = RobotContainer.RobotContainer()
@@ -29,6 +32,3 @@ class MyRobot(commands2.TimedCommandRobot):
     def teleopPeriodic(self) -> None:
         """This function is called periodically (every 20ms) during teleoperated mode."""
         pass
-
-if __name__ == "__main__":
-    wpilib.run(MyRobot)
