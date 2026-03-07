@@ -1,8 +1,13 @@
 #!/usr/bin/env python3
+#
+# Copyright (c) FIRST and other WPILib contributors.
+# Open Source Software; you can modify and/or share it under the terms of
+# the WPILib BSD license file in the root directory of this project.
+#
 
-import RobotContainer
+import wpilib
 import commands2
-
+import RobotContainer
 
 class MyRobot(commands2.TimedCommandRobot):
     def robotInit(self) -> None:
@@ -12,25 +17,18 @@ class MyRobot(commands2.TimedCommandRobot):
 
     def autonomousInit(self) -> None:
         """This function is run once each time the robot enters autonomous mode."""
-        # Note: When you are ready for auto, you would fetch the command from
-        # your robotContainer and schedule it here.
-        # Example:
-        # self.autonomousCommand = self.robotContainer.getAutonomousCommand()
-        # if self.autonomousCommand is not None:
-        #     self.autonomousCommand.schedule()
         return super().autonomousInit()
 
     def teleopInit(self) -> None:
         """This function is called once each time the robot enters teleoperated mode."""
         # This makes sure that the autonomous routine stops running when
-        # teleop starts. If you want auto to continue until interrupted, 
-        # you can remove this block.
+        # teleop starts.
         if self.autonomousCommand is not None:
             self.autonomousCommand.cancel()
 
     def teleopPeriodic(self) -> None:
         """This function is called periodically (every 20ms) during teleoperated mode."""
-        # Because you are using a Command-Based robot, the CommandScheduler 
-        # automatically runs your swerve's default RunCommand here. 
-        # You generally don't need to put anything in this method!
         pass
+
+if __name__ == "__main__":
+    wpilib.run(MyRobot)
