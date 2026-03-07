@@ -15,6 +15,7 @@ class MyRobot(commands2.TimedCommandRobot):
 
     def robotInit(self) -> None:
         """Robot initialization function"""
+        wpilib.reportWarning("Robot is initializing...")
         self.robotContainer = RobotContainer.RobotContainer()
         self.autonomousCommand = None
 
