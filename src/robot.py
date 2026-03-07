@@ -15,5 +15,4 @@ class MyRobot(commands2.TimedCommandRobot):
         self.robotContainer = RobotContainer.RobotContainer()
 
     def autonomousInit(self):
-        self.robotContainer.runAuto()
         return super().autonomousInit()
